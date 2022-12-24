@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeWork7</title>
+  </head>
+  <body>
+    <script>
+      console.log(`========task1========`);
+      frameworks = ["Angular.js", "jQuery"];
+
+      frameworks.unshift("Backbone.js"); // в начало
+      frameworks.push("React.js", "Vue.js"); // в конец
+      frameworks.splice(2, 0, "Common.js"); // добавить вторым элементом
+      console.log(frameworks);
+      function findAndDeleteElement(element) {
+        // находим индекс, удаляем и выводим по индексу
+        let index = frameworks.indexOf(element);
+        console.log(`Это здесь лишнее ${frameworks[index]}`);
+        frameworks.splice(index, 1);
+        console.log(frameworks);
+      }
+
+      findAndDeleteElement("jQuery");
+
+      console.log(`========task2========`);
+
+      function removeNegativeElements(array) {
+        console.log(array.filter((element) => element >= 0));
+      }
+      removeNegativeElements([-9, 2, 3, 0, -28, "value"]);
+
+      //   variant 2 with loop
+      newArray = [];
+      let Array = (array) => {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] >= 0) {
+            newArray.push(array[i]);
+          }
+        }
+        console.log(newArray);
+      };
+
+      Array([-9, 2, 3, 0, -28, "value"]);
+
+      console.log(`========task3========`);
+
+      // variant with method
+
+      let getStringElements = (array) => {
+        console.log(array.filter((el) => typeof el === "string"));
+      };
+      getStringElements([ 1, true, 42, "red", 64, "green", "web", new Date(), -898, false,]);
+
+      // variant with loop
+
+      let modArray = [];
+
+      const stringArray = (array) => {
+        let modArray = [];
+        for (let key of array) {
+          if (typeof key === "string") {
+            modArray.push(key);
+          }
+        }
+        console.log(modArray);
+      };
+
+      stringArray([ 1, true, 42, "red", 64, "green", "web", new Date(), -898, false,]);
+
+    //   рекурсия пока не выходит, буду разбираться
+    </script>
+  </body>
+</html>
